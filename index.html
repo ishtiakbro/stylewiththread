@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thread - Old Money Menswear</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    #menu-toggle:checked + #menu {
+      display: block;
+    }
+    select {
+      margin-top: 8px;
+    }
+    .custom-select {
+      background-color: #f9f9f9;
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      border: 1px solid #d1d5db;
+      font-weight: 500;
+    }
+    .fly-animation {
+      animation: flyToCart 1s ease-in-out forwards;
+    }
+    @keyframes flyToCart {
+      0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.5) translateY(-100px) translateX(200px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold text-sm">T</div>
+      <h1 class="text-2xl font-bold tracking-wide text-gray-800">Thread</h1>
+    </div>
+    <div class="md:hidden">
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+      <input type="checkbox" id="menu-toggle" class="hidden">
+    </div>
+    <nav id="menu" class="hidden md:flex space-x-4 text-sm font-medium absolute md:static bg-white top-16 left-0 w-full md:w-auto shadow md:shadow-none p-4 md:p-0">
+      <a href="#home" class="block md:inline hover:underline text-gray-700">Home</a>
+      <a href="#shop" class="block md:inline hover:underline text-gray-700">Shop</a>
+      <a href="#contact" class="block md:inline hover:underline text-gray-700">Contact</a>
+      <a href="#cart" class="block md:inline hover:underline text-gray-700">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="text-center py-24 bg-gray-900 text-white px-4">
+    <h2 class="text-5xl font-extrabold mb-4 tracking-tight">Old Money, Timeless Looks</h2>
+    <p class="text-lg max-w-2xl mx-auto">Classic drop-shoulder formals and polished essentials — redefined.</p>
+    <a href="#shop" class="mt-8 inline-block bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition">Shop Now</a>
+  </section>
+
+  <!-- Features -->
+  <div class="-mt-20 relative z-10 max-w-6xl mx-auto px-4">
+    <div class="bg-white text-black py-8 px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 rounded-2xl shadow-2xl">
+      <div class="text-center">
+        <h4 class="font-bold text-lg">Delivery Time</h4>
+        <p class="text-sm">3–7 Days</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold text-lg">Payment Methods</h4>
+        <p class="text-sm">Credit Card, bKash, Nagad, Cash on Delivery</p>
+      </div>
+      <div class="text-center">
+        <h4 class="font-bold text-lg">Support</h4>
+        <p class="text-sm"><a href="mailto:stylewiththread@gmail.com" class="text-blue-600">stylewiththread@gmail.com</a><br><a href="tel:+8801758891920" class="text-blue-600">+8801758891920</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <section id="shop" class="py-24 bg-gray-100 px-4">
+    <h3 class="text-4xl font-bold mb-14 text-center">Old Money Style Picks</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto" id="product-grid">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Get in Touch</h3>
+    <div class="max-w-xl mx-auto space-y-4 text-center text-gray-700">
+      <p class="text-lg">Have a question or want to collaborate?</p>
+      <p>Email: <a href="mailto:stylewiththread@gmail.com" class="text-blue-600 font-medium">stylewiththread@gmail.com</a></p>
+      <p>Phone: <a href="tel:+8801758891920" class="text-blue-600 font-medium">+8801758891920</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center p-6 text-sm">
+    <p>© 2025 Thread. A Bangladeshi Brand. Created by Ishtiak Ahmed.</p>
+  </footer>
+
+  <script>
+    const products = [
+      {
+        img: 'https://i.pinimg.com/564x/88/fc/e6/88fce61194d5c354d41cf5974060cf15.jpg',
+        title: 'Drop Shoulder Blazer',
+        desc: 'Elegant beige formal with classic old-money texture.',
+        price: '899 BDT'
+      },
+      {
+        img: 'https://i.pinimg.com/564x/52/f7/e3/52f7e3a83e5ff1b764a0e712a0841e7e.jpg',
+        title: 'Formal Coat Set',
+        desc: 'Refined layering with drop-shoulder modern twist.',
+        price: '599 BDT'
+      },
+      {
+        img: 'https://i.pinimg.com/564x/08/ea/f4/08eaf47a46ec46aeea7f648176130013.jpg',
+        title: 'Double-Breasted Charcoal Blazer',
+        desc: 'Timeless piece tailored for understated elegance.',
+        price: '999 BDT'
+      },
+      {
+        img: 'https://i.pinimg.com/564x/58/b4/f0/58b4f0fa351a1ecf72e3bd9c23be0e80.jpg',
+        title: 'Soft Wool Overcoat',
+        desc: 'Luxury feel, longline silhouette, true old-money vibe.',
+        price: '1199 BDT'
+      }
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+    products.forEach((product, index) => {
+      const div = document.createElement('div');
+      div.className = "product-card bg-white shadow rounded-lg overflow-hidden";
+      div.innerHTML = `
+        <img src="${product.img}" alt="Slot ${index + 1}" class="w-full h-60 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-lg mb-1">${product.title}</h4>
+          <p class="text-sm text-gray-600 mb-1">${product.desc}</p>
+          <p class="font-semibold mb-2">Price: ${product.price}</p>
+          <select class="custom-select w-full mb-2">
+            <option>Select Size</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+          </select>
+          <a href="#cart" class="block w-full bg-gray-900 text-white font-semibold py-2 rounded mb-2 hover:bg-gray-800 text-center">Add to Cart</a>
+          <a href="#cart" class="block w-full bg-green-700 text-white font-semibold py-2 rounded hover:bg-green-800 text-center">Order Now</a>
+        </div>
+      `;
+      productGrid.appendChild(div);
+    });
+  </script>
+</body>
+</html>
